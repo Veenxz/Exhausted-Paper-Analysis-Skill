@@ -19,19 +19,11 @@ Transform an academic paper into a high-density, evidence-bound intelligence ass
 
 USE Mode 2 [DEEP DIVE] L4 for comprehensive analysis input.
 
-## 🧩Core Capability
+## 🧩 Core Capability
 
 This skill focuses on comprehensive structured analysis of academic papers, following a standard evaluation framework.
 
 ## 🛠 Operating Modes
-
-### Paper Type Identification
-
-## Core Capability
-
-This skill focuses on comprehensive structured analysis of academic papers, following a standard evaluation framework.
-
-## Operating Modes
 
 ### Paper Type Identification
 
@@ -351,7 +343,7 @@ Instead of a passive review, act as a **hostile yet rigorous peer reviewer**.
 - **The Defense:** Attempt to find evidence in the paper that defends against these attacks.
 - **Verdict:** Mark claims as `✅ Defended` or `⚠️ Vulnerable`.
 
-### 8. Quantitative Data Extraction & Cross-analysis
+### 7. Quantitative Data Extraction & Cross-analysis
 
 For **paramount data**, establish parameter-outcome matrices:
 
@@ -359,7 +351,7 @@ For **paramount data**, establish parameter-outcome matrices:
 - **Comparative Analysis Table:** Compare this work vs 2-3 closest competitors/predecessors
 - **Critical Threshold Extraction:** Identify inflection points or decision boundaries
 
-### 9. Mechanistic Decoding & Reproducibility
+### 8. Mechanistic Decoding & Reproducibility
 
 - **Mechanism Model:** Translate biological/chemical observations into process flowcharts
 
@@ -378,7 +370,7 @@ For **paramount data**, establish parameter-outcome matrices:
   - Difficulty score (1=Trivial, 5=Severe): [Chemistry compatibility, Synthesis feasibility, Cost scaling, Regulatory burden, Unknown variables]
   - Show which components transfer vs which need re-optimization
 
-### 10. Relevance Evaluation Priority
+### 9. Relevance Evaluation Priority
 
 When assigning relevance, prioritize:
 
@@ -437,14 +429,15 @@ Generate a structured report with the following sections:
 - **Year**: [Publication year]
 - **DOI/URL**: [Link]
 - **Publication**: [Venue/journal/conference]
+- **Paper Type:** [Experimental / Theoretical / Computational / Review]
 
 
 ## Structured Evaluation
-- **Score:** X/10
-  - topic_match: X/10
-  - method_relevance: X/10
-  - quality_of_paper: X/10
-  - novelty_for_project: X/10
+- **Score:** X/10 (= X1 + X2 + X3 + X4)
+  - topic_match: X/10 × 35% = X1
+  - method_relevance: X/10 × 30% = X2
+  - quality_of_paper: X/10 × 20% = X3
+  - novelty_for_project: X/10 × 15% = X4
 - **Topic_tags:** [tag1] [tag2] ...
 - **Triage Label:** `Must-Read` / `Worth-Reading` / `Skip`
 
@@ -560,7 +553,7 @@ Generate a structured report with the following sections:
 - **Chemical Route:** [Step-by-step Bench-Ready Protocol]
 - **Cost/Scale:**[Price/Time, Budget/Timeline, Economic viability]
 - **Kinetics Profile:** [Gelation speed, reversibility, or pH-responsiveness]
-- **Biocompatibility:** High / Medium / Low / Not Mentioned
+- **Biocompatibility:** 🟢 High / 🟡 Medium / 🔴 Low / ⚪ Not Mentioned
 - **Lab Warning:** [Is there toxic reagent or extreme equipment required?]
 - **Application and future direction:**
 
@@ -630,7 +623,7 @@ Before finalizing the response, verify:
 - [ ] Delta vs SOTA table populated (DEEP DIVE)
 - [ ] QALMRI six modules completed (DEEP DIVE)
 - [ ] Scholarly Mapping contains at least 5 layers (DEEP DIVE)
-- [ ] Virtual Peer Review at least 3 Q&As (DEEP DIVE)
+- [ ] The Adversarial Reviewer has at least 3 Q&As (DEEP DIVE)
 - [ ] Output line count meets tier requirement
 - [ ] No fabricated content (citations/DOIs/numbers)
 - [ ] Triage label correctly assigned (SCAN)
