@@ -43,7 +43,7 @@ This skill focuses on comprehensive structured analysis of academic papers, foll
 - When summarizing findings, **quote or paraphrase only from the given content**. For each key claim, you should be able to point to a specific sentence or paragraph.
 - If the provided literature is incomplete, ambiguous, or lacks necessary sections (e.g., no methods described), state the missing elements clearly before proceeding with partial analysis.
 - Do **not** generate fake citations, fake author names, fake DOIs, or fake numerical data. If the paper does not include a number (e.g., sample size, p-value), do not invent one.
-- Strictly adhere to the anti-hallucination rules above..
+- Strictly adhere to the anti-hallucination rules above.
 
 ### 2. Evidence Binding
 
@@ -255,9 +255,13 @@ Evaluate paper quality across the following dimensions:
 - `Important_numbers`: extract key experiment numbers and results.
 - `Action_items`: provide executable next steps (validation, replication, follow-up reading).
 
-### 7. Virtual Peer Review
+### 7. The Adversarial Reviewer Protocol (Stress Testing+Devil's Advocate)
 
-Generate 3-5 critical questions from a rigorous reviewer/reader perspective, followed by evidence-based answers.
+Instead of a passive review, act as a **hostile yet rigorous peer reviewer**.
+
+- **The Attack:** Generate 3-5 "critical strike" questions targeting the weakest link in the logic chain (e.g., "The conclusion relies on Figure 4, but the sample size is too small to support the claim of universality").
+- **The Defense:** Attempt to find evidence in the paper that defends against these attacks.
+- **Verdict:** Mark claims as `✅ Defended` or `⚠️ Vulnerable`.
 
 ### 8. Quantitative Data Extraction & Cross-analysis
 
@@ -349,12 +353,12 @@ Generate a structured report with the following sections:
 - **Experimental Design:**
 - **Potential Citation Spot:** [Intro - Background / Discussion - Mechanism Comparison]
 - **Critical Questions:** [The "Devil's Advocate" questions for this paper]
-- **Charts:** [List all tables present (e.g., "Table 1-3")]
+- **Charts Analysis:** [List all tables present (e.g., "Table 1-3")]
 - **Charts Insight:** 
   - For each table
     - Overall quantitative trend analysis 
     - Highlight non-obvious patterns or counterintuitive findings
-- **Figures:** 
+- **Figures Analysis:** 
   - Detailed breakdown for each key figure (not just "see PDF"):
     - **Figure [N] - [Title]:** [Concise 1-2 sentence description of what it shows]
     - **Data:** [Specific values, ranges, or quantitative findings]
@@ -396,10 +400,11 @@ Generate a structured report with the following sections:
   - Unknown variables: [List]
 
 ## Lab & Synthesis Insights (Critical Thinking)
-- **Synthesis Complexity:** ⭐⭐⭐ (1=Facile, 5=Complex)
+- **Complexity Score:** ⭐⭐⭐ (1=Facile, 5=Complex)
 - **Chemical Route:** [Step-by-step Bench-Ready Protocol]
+- **Cost/Scale:**[Price/Time, Budget/Timeline, Economic viability]
 - **Kinetics Profile:** [Gelation speed, reversibility, or pH-responsiveness]
-- **Biocompatibility:** 🟢 High / 🟡 Medium / 🔴 Low / ⚪ Not Mentioned
+- **Biocompatibility:** High / Medium / Low / Not Mentioned
 - **Lab Warning:** [Is there toxic reagent or extreme equipment required?]
 - **Application and future direction:**
 
@@ -408,7 +413,7 @@ Generate a structured report with the following sections:
 - Positioning
 - Future Trajectory & Killer Apps
 
-## Virtual Peer Review
+## The Adversarial Reviewer
  - [Question 1] ...
  - [Evidence-based Answer 1] ...
  - ...
@@ -417,12 +422,12 @@ Generate a structured report with the following sections:
 [Mermaid diagram]
 
 ## MetaData
-- **Abstract:** (Raw Extracts) [FULL]
-- **Conclusion:** (Raw Extracts) [FULL]
-- **Research Question:**
-- **Main Findings:**
-- **Research outputs:** [Research outputs to the field]
-- **Explanation:** [5-line plain explanation]
+- **Abstract:** (Raw Extracts) [FULL - UNCOMPRESSED]
+- **Conclusion:** (Raw Extracts) [FULL - UNCOMPRESSED]
+- **Research Question:** [Exact]
+- **Main Findings:** [Exact]
+- **Research outputs:** [To the field]
+- **Explanation:** [5-line plain explanation: Background - Problem - Method - Findings - Significance]
   ...
 
 ```

@@ -19,19 +19,11 @@ Transform an academic paper into a high-density, evidence-bound intelligence ass
 
 USE Mode 2 [DEEP DIVE] L4 for comprehensive analysis input.
 
-## 🧩Core Capability
+## 🧩 Core Capability
 
 This skill focuses on comprehensive structured analysis of academic papers, following a standard evaluation framework.
 
 ## 🛠 Operating Modes
-
-### Paper Type Identification
-
-## Core Capability
-
-This skill focuses on comprehensive structured analysis of academic papers, following a standard evaluation framework.
-
-## Operating Modes
 
 ### Paper Type Identification
 
@@ -276,41 +268,36 @@ For each paper, perform a "Deep-Dive" dissection using the following dimensions.
 
 **Objective**: To establish the paper’s "Academic DNA" and its disruptive potential within the global research landscape through cross-verified data.
 
-1. **Paper Identity Verification**
-   - Call search tool (Google Scholar/CrossRef) to verify:
-   - Paper title, authors, publication year match
-   - Official DOI or URL retrieval
-   - Publication venue (journal/conference) confirmation
-     - Flag if paper cannot be verified or appears to be preprint/withdrawn
-2. **Citation & Impact Metrics**
-   - Extract from Google Scholar/PlumX:
-   - Citation count (total citations to date)
-   - h-index of lead author
-   - Citation trajectory (trending up/down over past 3 years)
-   - Self-citation ratio (if applicable)
-     - Format: `[Citations: N | h-index: X | Year: YYYY]`
-3. **Academic Genealogy (The "Ancestry" Map)**
-   - Foundational Roots (Ancestral Chemistry): Identify 1-2 seminal papers (usually 10+ years old) that established the fundamental theory.
-   - Direct Predecessors (The "Target" Benchmarks): Identify 2-3 recent works this paper specifically aims to outperform. Use the logic: [Predecessor X] provided [A], but lacked [B]; this paper solves [B].
-4. **Lateral Reading & Citation Sentiment**
-   - Peer Consensus: Search for external reviews or "Letters to the Editor." Does the community accept the findings?
-   - Citation Intent Analysis: * Supporting: Who has replicated these results?
-   - Contradicting/Critical: Are there scholars questioning the reproducibility or statistical rigor? Flag as (!) Scholarly Dispute.
-5. **Strategic Positioning (Market & Science)**
-   - The "Broken Ceiling": Precisely define the specific bottleneck (e.g., "The tradeoff between self-healing speed and mechanical modulus") that this paper finally resolved.
-   - Work Nature: [Pioneering (Disruptive) / Incremental (Optimization) / Application Transfer (Cross-domain)].
-   - Competitive Landscape: Compare performance metrics against the top 2 competing labs/technologies.
-6. **Future Trajectory & "Killer App" Forecasting**
-   - Short-term (T+2yr): Immediate laboratory extensions (e.g., new functional monomers).
-   - Long-term (T+10yr): Killer Application Prediction. (e.g., "Fully automated, in-situ 3D-printed heterogeneous meniscus substitutes for immediate clinical implantation").
-   - New Research Avenues: Has this paper opened a new sub-field (e.g., "Non-equilibrium biomaterials")?
-7. **Full Citation Format**
-   - Provide complete citation: `[DOI: xxxx-xxxx] | [Authors et al., Year] | [Venue]`
-   - Alternative (if DOI unavailable): `[URL: https://...] | [Authors et al., Year]`
+**Required layer**
+1. **Identity Verification**
+  - Verify title, authors, year, venue, DOI/URL.
+  - Flag if unverifiable, preprint-only, or withdrawn.
+2. **Academic Genealogy**
+  - Foundational roots: 1-2 seminal papers that established the theory/method.
+  - Direct predecessors: 2-3 recent works this paper extends or beats.
+3. **Citation Sentiment**
+  - Supporting / neutral / critical-disputing signals.
+  - Flag reproducibility disputes or confidence gaps.
+4. **Strategic Positioning**
+  - Broken ceiling: the bottleneck this paper resolves.
+  - Work nature: pioneering / incremental / application transfer.
+  - Competitive landscape: top competing labs/technologies.
+5. **Future Trajectory**
+  - Short-term (T+2yr) and long-term (T+10yr) directions.
+  - Killer-app forecast and new research avenues.
 
-### 4. Quality Evaluation & Scoring
+**Optional layer**
+- `impact_metrics`: citations, h-index, trajectory, self-citation ratio.
+- `citation_count`, `h-index`, `trajectory`.
+- Use only when external search is available and verification is possible.
 
-`Quality`：
+**Output contract**
+- Required fields: `scholarly_mapping`, `citation_sentiment`, `adversarial_reviewer`
+- Optional fields: `impact_metrics`, `citation_count`, `h-index`, `trajectory`
+
+### 4. Quality, Scoring & Tags
+
+`Quality`:
 
 | Dimension              | Evaluation Points                                                             |
 | :--------------------- | :---------------------------------------------------------------------------- |
@@ -318,7 +305,7 @@ For each paper, perform a "Deep-Dive" dissection using the following dimensions.
 | **Significance** | Theoretical contribution, Practical value, Knowledge extension                |
 | **Clarity**      | Structure, Writing precision, Figure/Table effectiveness                      |
 
-`Score Rubric: Baed on 4 dimensions`
+`Score Rubric: Based on 4 dimensions`
 
 Relevance Score: 0-10, precision 0.1, Score=X1+X2+X3+X4
 
@@ -327,7 +314,9 @@ Relevance Score: 0-10, precision 0.1, Score=X1+X2+X3+X4
 | topic_match         | 35%    | Alignment with target topic          | X/10 × 35% = X1 |
 | method_relevance    | 30%    | Usefulness of methods/materials      | X/10 × 30% = X2 |
 | quality_of_paper    | 20%    | Paper rigor + significance + clarity | X/10 × 20% = X3 |
-| novelty_for_project | 15%    | Potential new insight                | X/10 ×15% = X4  |
+| novelty_for_project | 15%    | Potential new insight                | X/10 ×15% = X4 |
+
+`Topic_tags` belong to the same structured-evaluation block and should be emitted once, not restated as a separate scoring topic.
 
 ### 5. Quality Self-Check Checklist
 
@@ -351,7 +340,7 @@ Instead of a passive review, act as a **hostile yet rigorous peer reviewer**.
 - **The Defense:** Attempt to find evidence in the paper that defends against these attacks.
 - **Verdict:** Mark claims as `✅ Defended` or `⚠️ Vulnerable`.
 
-### 8. Quantitative Data Extraction & Cross-analysis
+### 7. Quantitative Data Extraction & Cross-analysis
 
 For **paramount data**, establish parameter-outcome matrices:
 
@@ -359,7 +348,7 @@ For **paramount data**, establish parameter-outcome matrices:
 - **Comparative Analysis Table:** Compare this work vs 2-3 closest competitors/predecessors
 - **Critical Threshold Extraction:** Identify inflection points or decision boundaries
 
-### 9. Mechanistic Decoding & Reproducibility
+### 8. Mechanistic Decoding & Reproducibility
 
 - **Mechanism Model:** Translate biological/chemical observations into process flowcharts
 
@@ -378,7 +367,7 @@ For **paramount data**, establish parameter-outcome matrices:
   - Difficulty score (1=Trivial, 5=Severe): [Chemistry compatibility, Synthesis feasibility, Cost scaling, Regulatory burden, Unknown variables]
   - Show which components transfer vs which need re-optimization
 
-### 10. Relevance Evaluation Priority
+### 9. Relevance Evaluation Priority
 
 When assigning relevance, prioritize:
 
@@ -455,7 +444,7 @@ Generate a structured report with the following sections:
 [Formulaic expression of core contribution]
 
 ### Logic Chain:\n
-[GAP] → [HYPOTHESIS] → [METHOD] → [RESULT] → [INFERENCE]
+  - [GAP] → [HYPOTHESIS] → [METHOD] → [RESULT] → [INFERENCE]
 
 ### QALMRI Analysis:\n
 
@@ -469,7 +458,7 @@ Generate a structured report with the following sections:
 | **I - Inferences** | [Conclusion validity assessment] | [Evidence tier] |
 
 ### Summary:\n
-[1-paragraph concise overview]
+  - [1-paragraph concise overview, What does this paper do, and what are the main findings?]
 
 ### Key Points:\n
 | Core Finding | Evidence Quote | Location | Confidence |
@@ -565,37 +554,19 @@ Generate a structured report with the following sections:
 - **Application and future direction:**
 
 ## Scholarly Mapping
-- **Identity Verified:** ✅ [DOI/URL]
-
-### Academic Genealogy
-| Tier | Paper | Contribution |
-|:---|:---|:---|
-| Foundational | [Author et al. ] | [Established theory] |
-| Direct Predecessor | [Author et al. ] | [Provided A, lacked B] |
-| This Work | Current paper | [Solves B] |
-
-Papers:
-List complete citation: `[DOI: xxxx-xxxx] | [Authors et al., Year]
-- Paper 1 
-...
-
-### Citation Sentiment
-| Type | Proportion | Representative Citation |
-|:---|:---|:---|
-| Supporting | X% | [Citation] |
-| Neutral | X% | [Citation] |
-| Critical/Disputing | X% | (!) [Citation] |
-
-### Positioning
-- **Broken Ceiling:** [Specific bottleneck resolved]
-- **Work Nature:** [Pioneering / Incremental / Application Transfer]
-
-### Future Trajectory  & Killer Apps
-| Timeframe | Predicted Direction |
-|:---|:---|
-| Short-term (T+2yr) | [Immediate extensions] |
-| Long-term (T+10yr) | [Killer application] |
-| New Research Avenues | [Sub-field opened] |
+- **Required:**
+  - **Identity Verified:** ✅ [DOI/URL]
+  - **Academic Genealogy:** Foundational + direct predecessors
+  - **Citation Sentiment:** Supporting / neutral / critical-disputing
+  - **Positioning:** Broken ceiling + work nature + competitive landscape
+  - **Future Trajectory:** short-term + long-term + new research avenues
+- **Optional:**
+  - **Impact Metrics:** [Citations: N | h-index: X | Trend: ↑/↓/→]
+  - **Citation Count:** [N]
+  - **h-index:** [N]
+  - **Trajectory:** [↑/↓/→]
+  - **Self-citation ratio:** [N%]
+- **Citation format:** `[DOI: xxxx-xxxx] | [Authors et al., Year] | [Venue]`
 
 ## The Adversarial Reviewer
  - [Question 1] ...
