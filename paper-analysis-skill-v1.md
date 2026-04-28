@@ -1,7 +1,7 @@
 ---
-name: paper-analysis
-description: Domain-specific paper analysis skill
-Generated based v0 with Gemini and Deepseek.
+name: Exhausted-paper-analysis-v1
+description: Domain-specific paper analysis skill with sturcture outputs
+ref: Generated based v0 with Gemini and Deepseek.
 triggers:
   - analyze paper
   - paper analysis
@@ -299,7 +299,7 @@ When assigning relevance, prioritize:
 - Experimental transferability to practical lab conditions.
 - Signal-to-noise against unrelated biomaterial domains.
 
-## Output Format
+## Output Templates
 
 Generate a structured report with the following sections:
 
@@ -315,16 +315,19 @@ Generate a structured report with the following sections:
 
 
 ## Structured Evaluation
-- Score: 0-10
-  - topic_match
-  - quality_of_paper
-  - method_relevance
-  - novelty_for_project
-
-- Topic_tags: [tag1] [tag2] ...
+- **Score:** X/10
+  - topic_match: X/10
+  - method_relevance: X/10
+  - quality_of_paper: X/10
+  - novelty_for_project: X/10
+- **Topic_tags:** [tag1] [tag2] ...
+- **Triage Label:** `Must-Read` / `Worth-Reading` / `Skip`
 
 
 ## Core Content
+
+### Napkin Formula:\n
+[Formulaic expression of core contribution]
 
 ### Logic Chain:\n
   - [GAP] -> [HYPOTHESIS] -> [METHOD] -> [RESULT]
@@ -333,10 +336,17 @@ Generate a structured report with the following sections:
   - [1-paragraph concise overview, What does this paper do, and what are the main findings?]
 
 ### Key_points:\n
-  - [claim1]
-  - [evidence_quote1]
-  - [location1]
-  - ...
+  | Core Finding | Evidence Quote | Location | Confidence |
+  |:---|:---|:---|:---|
+  | [claim1] | "[quote]" | [Section/Figure/Table + location] | ✅/⚠️/?/! |
+  | [claim2] | "[quote]" | [Section/Figure/Table + location] | ✅/⚠️/?/! |
+  ...
+
+### Potential Citation Spot:\n
+  - [Intro - Background / Discussion - Mechanism Comparison]
+  
+### Critical Questions:\n
+  - [The "Devil's Advocate" questions for this paper]
 
 ### Important_numbers:\n
   - ...
@@ -348,20 +358,30 @@ Generate a structured report with the following sections:
   - ...
 
 
-## Research Related (Detailed)
-- **Innovation Matrix:**[Theoretical/Methodological/Application]
-- **Experimental Design:**
-- **Potential Citation Spot:** [Intro - Background / Discussion - Mechanism Comparison]
-- **Critical Questions:** [The "Devil's Advocate" questions for this paper]
-- **Charts Analysis:** [List all tables present (e.g., "Table 1-3")]
+## Detailed Analysis
+### Innovation Matrix:\n
+  | Type | Innovation Point | Evidence |
+  |:---|:---|:---|
+  | Theoretical | [X] | [Section] |
+  | Methodological | [X] | [Section] |
+  | Application | [X] | [Section] |
+
+### Experimental Design
+- **Architecture:** [Control setup, variable control, sample selection]
+- **Mechanism Model:** [Input] → [Step 1: details] → ... → [Output]
+
+### Figures & Charts Analysis
+- **Charts:** [List all tables present from the input, include Specific values and 2-3 sentence analysis]
+- **Figures Analysis:** 
+  - Detailed breakdown for each key figure (not just "see PDF"):
+    - **Figure [N] - [Title]:** [Concise 2-3 sentence description of what it shows]
+    - **Data:** [Specific values, ranges, or quantitative findings]
+
+### Figures & Charts Insight
 - **Charts Insight:** 
   - For each table
     - Overall quantitative trend analysis 
     - Highlight non-obvious patterns or counterintuitive findings
-- **Figures Analysis:** 
-  - Detailed breakdown for each key figure (not just "see PDF"):
-    - **Figure [N] - [Title]:** [Concise 1-2 sentence description of what it shows]
-    - **Data:** [Specific values, ranges, or quantitative findings]
 - **Figure Insight:**
   - For each primary figure (1, 3, 5, key comparative figures):
     - **[Figure #]:** [2-3 sentence analysis including: (a) what parameter changed, (b) observed outcome, (c) mechanistic implication]

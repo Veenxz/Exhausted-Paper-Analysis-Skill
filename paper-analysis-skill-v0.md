@@ -7,7 +7,7 @@ triggers:
   - paper analysis
   - read paper
   - evaluate paper relevance
-version: 0.0.1
+version: 0.2.0
 ---
 # Paper Analysis Skill
 
@@ -146,7 +146,7 @@ When assigning relevance, prioritize:
 - Experimental transferability to practical lab conditions.
 - Signal-to-noise against unrelated biomaterial domains.
 
-## Output Format
+## Output Templates
 
 Generate a structured report with the following sections:
 
@@ -157,27 +157,35 @@ Generate a structured report with the following sections:
 - **Authors:** [Author List]
 - **Institution:** [Institution]
 - **Year**: [Publication year]
+- **DOI/URL**: [Link]
 - **Publication**: [Venue/journal/conference]
 
 
 ## Structured Evaluation
-- Score: 0-10
+- **Score:** 0-10
   - topic_match
   - quality_of_paper
   - method_relevance
   - novelty_for_project
 
-- Topic_tags: [tag1, tag2, ...]
+- **Topic_tags:** [tag1, tag2, ...]
 
 ## Core Content
 ### Summary:\n
-  - [1-paragraph concise overview]
+  - [1-paragraph concise overview, What does this paper do, and what are the main findings?]
 
-### Key_points:\n
-  - [claim1]
-  - [evidence_quote1]
-  - [location1]
-  - ...
+### Key Points:\n
+  | Core Finding | Evidence Quote | Location | Confidence |
+  |:---|:---|:---|:---|
+  | [claim1] | "[quote]" | [Section/Figure/Table + location] | ✅/⚠️/?/! |
+  | [claim2] | "[quote]" | [Section/Figure/Table + location] | ✅/⚠️/?/! |
+  ...
+
+### Potential Citation Spot:\n
+  - [Intro - Background / Discussion - Mechanism Comparison]
+  
+### Critical Questions:\n
+  - [The "Devil's Advocate" questions for this paper]
 
 ### Important_numbers:\n
   - ...
@@ -185,18 +193,29 @@ Generate a structured report with the following sections:
 ### Action_items:\n
   - ...
 
-### Limitations and Critical:\n 
+### Limitations and Critical Evaluation:\n 
   - ...
 
 
-## Research Related (Detailed)
-- **Innovation Matrix:**
-- **Experimental Design:**
-- **Potential Citation Spot:** [Intro - Background / Discussion - Mechanism Comparison]
-- **Critical Questions:** [The "Devil's Advocate" questions for this paper]
-- **Charts:** [Extrcat all charts from the input]
+## Detailed Analysis
+### Innovation Matrix:\n
+  | Type | Innovation Point | Evidence |
+  |:---|:---|:---|
+  | Theoretical | [X] | [Section] |
+  | Methodological | [X] | [Section] |
+  | Application | [X] | [Section] |
+
+### Experimental Design
+- **Architecture:** [Control setup, variable control, sample selection]
+- **Mechanism Model:** [Input] → [Step 1: details] → ... → [Output]
+
+### Figures & Charts Analysis
+- **Charts:** [Extrcat all charts from the input, include Specific values and 2-3 sentence analysis]
+- **Figures:** [Extrcat all Figures from the input, include Specific values and 2-3 sentence analysis]
+
+### Figures & Charts Insight
 - **Charts Insight:** [Describe all charts as a academic researcher]
-- **Figure Insight:** [Trend, Difference, ...]
+- **Figures Insight:** [Trend, Difference, ...]
 
 ## Lab & Synthesis Insights (Critical Thinking)
 - **Synthesis Complexity:** ⭐⭐⭐ (1=Facile, 5=Complex)
@@ -206,12 +225,13 @@ Generate a structured report with the following sections:
 - **Lab Warning:** [Is there toxic reagent or extreme equipment required?]
 - **Application and future direction:**
 
-## Virtual Peer Review
+## The Adversarial Reviewer
  - [Question 1] ...
  - [Evidence-based Answer 1] ...
  - ...
 
 ## Mind map of whole paper:(Mermaid)
+  - ...
 
 ## MetaData
 - **Abstract:** [Extract FULL Abstract from the input]

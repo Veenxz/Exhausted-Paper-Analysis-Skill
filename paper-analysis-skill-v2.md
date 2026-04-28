@@ -1,7 +1,7 @@
 ---
-name: paper-analysis
+name: Exhausted-paper-analysis-v1
 description: Domain-specific paper analysis skill with SCAN (triage) and DEEP DIVE (rigorous) modes. Anti-hallucination evidence binding, linguistic compression, and scholarly mapping.
-Generated based v1 with Gemini and Deepseek.
+ref: Generated based v1 with Gemini and Deepseek.
 triggers:
   - analyze paper
   - paper analysis
@@ -9,7 +9,7 @@ triggers:
   - evaluate paper relevance
   - scan paper
   - deep dive paper
-version: 2.1.0
+version: 2.2.0
 ---
 # Paper Analysis Skill
 
@@ -269,29 +269,41 @@ For each paper, perform a "Deep-Dive" dissection using the following dimensions.
 **Objective**: To establish the paper’s "Academic DNA" and its disruptive potential within the global research landscape through cross-verified data.
 
 **Required layer**
+
 1. **Identity Verification**
-  - Verify title, authors, year, venue, DOI/URL.
-  - Flag if unverifiable, preprint-only, or withdrawn.
+
+- Verify title, authors, year, venue, DOI/URL.
+- Flag if unverifiable, preprint-only, or withdrawn.
+
 2. **Academic Genealogy**
-  - Foundational roots: 1-2 seminal papers that established the theory/method.
-  - Direct predecessors: 2-3 recent works this paper extends or beats.
+
+- Foundational roots: 1-2 seminal papers that established the theory/method.
+- Direct predecessors: 2-3 recent works this paper extends or beats.
+
 3. **Citation Sentiment**
-  - Supporting / neutral / critical-disputing signals.
-  - Flag reproducibility disputes or confidence gaps.
+
+- Supporting / neutral / critical-disputing signals.
+- Flag reproducibility disputes or confidence gaps.
+
 4. **Strategic Positioning**
-  - Broken ceiling: the bottleneck this paper resolves.
-  - Work nature: pioneering / incremental / application transfer.
-  - Competitive landscape: top competing labs/technologies.
+
+- Broken ceiling: the bottleneck this paper resolves.
+- Work nature: pioneering / incremental / application transfer.
+- Competitive landscape: top competing labs/technologies.
+
 5. **Future Trajectory**
-  - Short-term (T+2yr) and long-term (T+10yr) directions.
-  - Killer-app forecast and new research avenues.
+
+- Short-term (T+2yr) and long-term (T+10yr) directions.
+- Killer-app forecast and new research avenues.
 
 **Optional layer**
+
 - `impact_metrics`: citations, h-index, trajectory, self-citation ratio.
 - `citation_count`, `h-index`, `trajectory`.
 - Use only when external search is available and verification is possible.
 
 **Output contract**
+
 - Required fields: `scholarly_mapping`, `citation_sentiment`, `adversarial_reviewer`
 - Optional fields: `impact_metrics`, `citation_count`, `h-index`, `trajectory`
 
@@ -314,7 +326,7 @@ Relevance Score: 0-10, precision 0.1, Score=X1+X2+X3+X4
 | topic_match         | 35%    | Alignment with target topic          | X/10 × 35% = X1 |
 | method_relevance    | 30%    | Usefulness of methods/materials      | X/10 × 30% = X2 |
 | quality_of_paper    | 20%    | Paper rigor + significance + clarity | X/10 × 20% = X3 |
-| novelty_for_project | 15%    | Potential new insight                | X/10 ×15% = X4 |
+| novelty_for_project | 15%    | Potential new insight                | X/10 ×15% = X4  |
 
 `Topic_tags` belong to the same structured-evaluation block and should be emitted once, not restated as a separate scoring topic.
 
@@ -461,11 +473,11 @@ Generate a structured report with the following sections:
   - [1-paragraph concise overview, What does this paper do, and what are the main findings?]
 
 ### Key Points:\n
-| Core Finding | Evidence Quote | Location | Confidence |
-|:---|:---|:---|:---|
-| [claim1] | "[quote]" | [Section/Figure/Table + location] | ✅/⚠️/?/! |
-| [claim2] | "[quote]" | [Section/Figure/Table + location] | ✅/⚠️/?/! |
-...
+  | Core Finding | Evidence Quote | Location | Confidence |
+  |:---|:---|:---|:---|
+  | [claim1] | "[quote]" | [Section/Figure/Table + location] | ✅/⚠️/?/! |
+  | [claim2] | "[quote]" | [Section/Figure/Table + location] | ✅/⚠️/?/! |
+  ...
 
 ### Delta vs SOTA Comparison:\n
 | Dimension | SOTA | This Paper | Delta |
@@ -489,11 +501,11 @@ Generate a structured report with the following sections:
 ## Detailed Analysis
 
 ### Innovation Matrix:\n
-| Type | Innovation Point | Evidence |
-|:---|:---|:---|
-| Theoretical | [X] | [Section] |
-| Methodological | [X] | [Section] |
-| Application | [X] | [Section] |
+  | Type | Innovation Point | Evidence |
+  |:---|:---|:---|
+  | Theoretical | [X] | [Section] |
+  | Methodological | [X] | [Section] |
+  | Application | [X] | [Section] |
 
 ### Experimental Design
 - **Architecture:** [Control setup, variable control, sample selection]
@@ -507,9 +519,8 @@ Generate a structured report with the following sections:
   - □ Troubleshooting? [Yes/No/Partial]
 
 ### Figures & Charts Analysis
-| Item | Title | Data | Insight |
-|:---|:---|:---|:---|
-| Fig N | [Title] | [Specific values] | [2-3 sentence analysis] |
+- **Charts:** [Extrcat all charts from the input, include Specific values and 2-3 sentence analysis]
+- **Figures:** [Extrcat all Figures from the input, include Specific values and 2-3 sentence analysis]
 
 ### Figures & Charts Insight
   - For each primary item (1, 3, 5, key comparative figures):
